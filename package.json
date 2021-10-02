@@ -1,0 +1,32 @@
+{
+  "name": "git-ls-remote",
+  "version": "1.0.0",
+  "description": "Simple API to return the contents of `git ls-remote <url>` for a given url.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --fix ."
+  },
+  "author": "Wingy <git@wingysam.xyz>",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "spawn-please": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wingysam/git-ls-remote.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Wingysam/git-ls-remote/issues"
+  },
+  "homepage": "https://github.com/Wingysam/git-ls-remote#readme"
+}
