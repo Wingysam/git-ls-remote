@@ -1,12 +1,16 @@
 const spawn = require('spawn-please')
 const express = require('express')
 const cors = require('cors')
+const path = require('path')
 
 const app = express()
 app.use(cors())
 
 app.get('/', async (req, res) => {
-  if (!req.query.url) return res.status(403).send('set ?url=...')
+  if (!req.query.url) {
+    res.header('Content-Type', 'text/plain')
+    return res.sendFile(path.join(__dirname, 'README.md'))
+  }
 
   try {
     const git = await spawn('git',
