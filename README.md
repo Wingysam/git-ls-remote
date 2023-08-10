@@ -37,6 +37,7 @@ docker run --rm -it -p 8080:80 you/git-ls-remote
 ```
 
 ## systemd Service File
+This file was contributed by [SeaswimmerTheFsh](https://github.com/SeaswimmerTheFsh).
 ```yaml
 [Unit]
 Description=Git LS Remote
