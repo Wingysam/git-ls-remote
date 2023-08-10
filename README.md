@@ -36,6 +36,28 @@ docker run --rm -it -p 8080:80 you/git-ls-remote
 })()
 ```
 
+## systemd Service File
+```yaml
+[Unit]
+Description=Git LS Remote
+
+[Service]
+# If you experience issues, make sure the node path below is correct. It could change depending on your system.
+# This service was made for use with Rocky Linux 9.
+ExecStart=/usr/bin/node <path-to-repo>/git-ls-remote/index.js
+RestartSec=10
+Restart=always
+StandardOutput=journal
+SyslogIdentifier=git-ls-remote
+# Put whatever user and group you're using to run the script below. Please don't run this service as root, if you can avoid it.
+User=user
+Group=group
+Environment=PORT=8080
+
+[Install]
+WantedBy=multi-user.target
+```
+
 # About Developer
 Hi, I'm Wingy. This is a quick project I made because I needed it. My website is [wingysam.xyz](https://wingysam.xyz). Please [hire me](https://wingysam.xyz/hire).
 
