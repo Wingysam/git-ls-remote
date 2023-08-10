@@ -14,20 +14,20 @@ npm install
 
 ## Build & Publish (docker)
 
-```
+```sh
 docker build . -t you/git-ls-remote
 docker push you/git-ls-remote
 ```
 
 ## Run (dockerless)
 
-```
+```sh
 PORT=8080 node index.js
 ```
 
 ## Run (docker)
 
-```
+```sh
 docker run --rm -it -p 8080:80 you/git-ls-remote
 ```
 
@@ -46,6 +46,7 @@ docker run --rm -it -p 8080:80 you/git-ls-remote
 ## systemd Service File
 
 This file was contributed by [SeaswimmerTheFsh](https://github.com/SeaswimmerTheFsh).
+
 ```yaml
 [Unit]
 Description=Git LS Remote
