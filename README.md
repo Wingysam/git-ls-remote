@@ -2,22 +2,12 @@
 Simple API to return the contents of `git ls-remote <url>` for a given url.
 
 ## License
-This project is licensed MIT, you can freely use it for any purpose.
-
-## Install (dockerless)
-```sh
-npm install
-```
+This project is under the MIT license. You can freely use it for any purpose.
 
 ## Build & Publish (docker)
 ```
 docker build . -t you/git-ls-remote
 docker push you/git-ls-remote
-```
-
-## Run (dockerless)
-```
-PORT=8080 node index.js
 ```
 
 ## Run (docker)
@@ -35,6 +25,9 @@ docker run --rm -it -p 8080:80 you/git-ls-remote
   console.log(`The repository ${empty ? 'does not' : 'does'} exist.`)
 })()
 ```
+
+## Security Risks
+Exposing `git ls-remote` to the internet is a significant security risk. If there's ever an RCE in the command, attackers could exploit this service to breach the server it's hosted on. Be careful with exposing it and isolate it as strongly as you can.
 
 # About Developer
 Hi, I'm Wingy. This is a quick project I made because I needed it. My website is [wingysam.xyz](https://wingysam.xyz). Please [hire me](https://wingysam.xyz/hire).
